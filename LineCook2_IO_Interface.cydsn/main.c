@@ -1,25 +1,16 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
 #include <project.h>
+#include <main.h>
+#include <actions.h>
 
 int main()
 {
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    action_t action;
+    char params[10];
 
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
-        /* Place your application code here. */
+        action = waitForInstruction(&params);
+        executeAction(action, &params);
     }
 }
-
-/* [] END OF FILE */
