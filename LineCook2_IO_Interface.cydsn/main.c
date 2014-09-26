@@ -22,8 +22,12 @@ int main()
     I2CS_I2CSlaveInitWriteBuf(i2cWriteBuffer, BUFFER_SIZE);
     I2CS_Start();    
     
+	for (;;) {
     // Set time to 8:32 PM
     setClock(20u, 32u);
+	
+	CyDelay(1000);
+	}
 
     for(;;)
     {

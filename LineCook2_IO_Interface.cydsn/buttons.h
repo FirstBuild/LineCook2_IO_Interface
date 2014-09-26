@@ -2,7 +2,11 @@
 #define BUTTONS_HEADER
     
 #include <main.h>
-    
+
+#define BUTTON_ON_MS    50
+#define ENCODER_ON_MS   12
+#define BUTTON_OFF_MS   50
+
 typedef enum
 {
     BTN_POPCORN,
@@ -27,5 +31,9 @@ typedef enum
 
 void pushButton(button_t button);
 void setButtonState(button_t button, uint8 value);
+
+void encoderDecrement();
+void encoderIncrement();
+void encoderButton(button_t firstButton, button_t secondButton);
 
 #endif

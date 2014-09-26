@@ -57,28 +57,27 @@ void setClock(uint8 hours, uint8 minutes)
     }
 
     pushButton(BTN_CLOCK_AMPM);
-    pushButton(BTN_INCREMENT);
+    encoderIncrement();
     
     // Initial time is 1:00
     for (i = 1; i < hours; i++)
     {
-        pushButton(BTN_INCREMENT);
+        encoderIncrement();
     }
     
     pushButton(BTN_ENTER);
-    pushButton(BTN_INCREMENT);
     
     for (i = 0; i < minutes; i++)
     {
-        pushButton(BTN_INCREMENT);
+        encoderIncrement();
     }
     
     pushButton(BTN_ENTER);
-    pushButton(BTN_INCREMENT);
+    encoderIncrement();
     
     if (pm == 1)
     {
-        pushButton(BTN_INCREMENT);
+        encoderIncrement();
     }
     
     pushButton(BTN_ENTER);
@@ -98,27 +97,30 @@ void setMode(mode_t mode)
     }
     
     // Move encoder by one step, which initializes values for heat/time
-    pushButton(BTN_INCREMENT);
+    encoderIncrement();
 }
 
 // Assumes that screen is currently at the "Set Heat" stage
 void setConvectionHeat(uint16 heat)
 {
-    int i, diff;
-    button_t encoderBtn;
+    int i, diff, direction;
     
     if (heat == 350) {
         return;
     } else if (heat > 350) {
-        encoderBtn = BTN_INCREMENT;
+        direction = 1;
         diff = heat - 350;
     } else {
-        encoderBtn = BTN_DECREMENT;
+        direction = 0;
         diff = 350 - heat;
     }
    
     for (i = 0; i < diff; i++) {
-        pushButton(encoderBtn);
+		if (direction == 1) {
+			encoderIncrement();
+		} else {
+			encoderDecrement();
+		}
     }
     
     pushButton(BTN_ENTER);
@@ -135,7 +137,7 @@ void setCookingTime(uint16 seconds)
  
     for (i = 0; i < steps; i++) 
     {
-        pushButton(BTN_INCREMENT);
+        encoderIncrement();
     }
     
     pushButton(BTN_ENTER);
@@ -151,7 +153,7 @@ void setMicrowavePower(uint8 power)
     
     for (i = 10; i > power; i--)
     {
-        pushButton(BTN_DECREMENT);
+        encoderDecrement();
     }
     pushButton(BTN_ENTER);
 }

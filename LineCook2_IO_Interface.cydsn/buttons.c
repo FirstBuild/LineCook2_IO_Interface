@@ -3,9 +3,31 @@
 void pushButton(button_t button)
 {
     setButtonState(button, 1);
-    CyDelay(30);
+    CyDelay(BUTTON_ON_MS);
     setButtonState(button, 0);
-    CyDelay(30);
+    CyDelay(BUTTON_OFF_MS);
+}
+
+void encoderDecrement()
+{
+	encoderButton(BTN_INCREMENT, BTN_DECREMENT);
+}
+
+void encoderIncrement()
+{
+	encoderButton(BTN_DECREMENT, BTN_INCREMENT);
+}
+
+void encoderButton(button_t firstSwitch, button_t secondSwitch)
+{
+	setButtonState(firstSwitch, 1);
+    CyDelay(ENCODER_ON_MS / 2);
+    setButtonState(secondSwitch, 1);
+	CyDelay(ENCODER_ON_MS / 2);
+	setButtonState(firstSwitch, 0);
+	CyDelay(ENCODER_ON_MS / 2);
+	setButtonState(secondSwitch, 0);
+    CyDelay(ENCODER_ON_MS);
 }
 
 void setButtonState(button_t button, uint8 value)
