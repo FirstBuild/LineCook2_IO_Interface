@@ -180,6 +180,8 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Popcorn</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Power</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Reheat</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\StartPause</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\TimeCook</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">

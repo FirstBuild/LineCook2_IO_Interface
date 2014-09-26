@@ -2,7 +2,7 @@
 #define I2C_HEADER
     
 /* Buffer and packet size */
-#define BUFFER_SIZE     (7u)
+#define BUFFER_SIZE     (5u)
 #define PACKET_SIZE     (BUFFER_SIZE)
 
 /* Packet positions */
@@ -10,7 +10,7 @@
 #define PACKET_CMD_POS  (1u)
 #define PACKET_STS_POS  (PACKET_CMD_POS)
 #define PACKET_PRM_POS  (2u)
-#define PACKET_EOP_POS  (6u)
+#define PACKET_EOP_POS  (4u)
 
 /* Start and end of packet markers */
 #define PACKET_SOP      (0x01u)

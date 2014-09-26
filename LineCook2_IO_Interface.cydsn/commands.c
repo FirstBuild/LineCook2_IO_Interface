@@ -135,7 +135,7 @@ void setCookingTime(uint16 seconds)
     steps = (seconds / 15) - 1;
     if (seconds % 15 > 7) steps += 1;
  
-    for (i = 0; i < steps; i++) 
+    for (i = 0; i < steps; i++)
     {
         encoderIncrement();
     }
