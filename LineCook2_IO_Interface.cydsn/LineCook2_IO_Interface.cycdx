@@ -24,7 +24,7 @@
   <block name="TimeCook" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ConvBake" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Reheat" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="EZI2C_1" BASE="0x0" SIZE="0x0" desc="Serial Communication Block" visible="true">
+  <block name="I2CS" BASE="0x0" SIZE="0x0" desc="Serial Communication Block" visible="true">
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="rx_wake_VM" BASE="0x0" SIZE="0x0" desc="" visible="true" />

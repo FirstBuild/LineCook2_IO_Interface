@@ -3,7 +3,7 @@
     
 #include <main.h>
     
-typedef enum 
+typedef enum
 {
     BTN_POPCORN,
     BTN_BEVERAGE,

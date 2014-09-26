@@ -1,56 +1,30 @@
-#include <main.h>
-#include <actions.h>
+#include <commands.h>
 #include <buttons.h>
 
-// params is an array with a length of 10 bytes. 
-action_t waitForInstruction(uint8 (*params)[10])
+void executeCommand(command_t command, uint8 (*params)[4])
 {
-    // Listen for SPI message, 
-    // fill params array with bytes
-    // return action;
-}
-
-// Parses a short at a given params index.
-// ex:
-//    [0, 128] => 128
-//    [1, 0]   => 256
-uint16 uint16AtParamsIndex(uint8 i, uint8 (*params)[10])
-{
-    uint16 value;
-    value = ((uint16) (*params)[i]) << 8;
-    value = value | ((uint16) (*params)[i + 1]);
-    return value;
-}
-
-void executeAction(action_t action, uint8 (*params)[10])
-{
-    uint16 twoByteValue;
-    switch (action)
+    switch (command)
     {
-        case SET_CLOCK:
-            twoByteValue = uint16AtParamsIndex(0, params);
-            setClock(twoByteValue);
+       
+        case CMD_SET_CLOCK:
+            setClock(*((uint16 *) params));
             break;
         
-        case SET_MODE:
+        case CMD_SET_MODE:
             setMode((*params)[0]);
             break;
         
-        case SET_HEAT:
-            twoByteValue = uint16AtParamsIndex(0, params);
-            setHeat(twoByteValue);
+        case CMD_SET_HEAT:
+            setHeat(*((uint16 *) params));
             break;
         
-        case SET_TIME:
-            twoByteValue = uint16AtParamsIndex(0, params);
-            setTime(twoByteValue);
+        case CMD_SET_TIME:
+            setTime(*((uint32 *) params));
             break;
         
-        case PUSH_BUTTON:
-            // Button index should be first parameter
+        case CMD_PUSH_BUTTON:
             pushButton((button_t) (*params)[0]);
-            break;
-        
+            break;        
     }   
 }
 

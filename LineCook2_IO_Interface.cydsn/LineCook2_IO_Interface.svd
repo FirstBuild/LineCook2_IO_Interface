@@ -7,7 +7,7 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>EZI2C_1</name>
+      <name>I2CS</name>
       <description>Serial Communication Block</description>
       <baseAddress>0x40070000</baseAddress>
       <addressBlock>

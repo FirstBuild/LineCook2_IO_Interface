@@ -3,9 +3,9 @@
 void pushButton(button_t button)
 {
     setButtonState(button, 1);
-    CyDelay(20);
+    CyDelay(30);
     setButtonState(button, 0);
-    CyDelay(20);
+    CyDelay(30);
 }
 
 void setButtonState(button_t button, uint8 value)

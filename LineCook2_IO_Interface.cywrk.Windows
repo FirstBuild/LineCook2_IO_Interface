@@ -13,19 +13,20 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\commands.c">
 <ExpandedNodeIds>
 <v>LineCook2_IO_Interface</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\TopDesign.cysch</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\LineCook2_IO_Interface.cydwr</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\actions.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\buttons.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\commands.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\i2c_constants.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\main.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\actions.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\buttons.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\commands.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\main.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4</v>
@@ -76,23 +77,27 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Express\Express.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Express\Express.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Express\Express_aliases.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_BOOT.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_EZI2C.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_EZI2C.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_EZI2C_BOOT.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_EZI2C_INT.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_EZI2C_PVT.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_PINS.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_PM.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1\EZI2C_1_PVT.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_scl\EZI2C_1_scl.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_scl\EZI2C_1_scl.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_scl\EZI2C_1_scl_aliases.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_sda\EZI2C_1_sda.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_sda\EZI2C_1_sda.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_sda\EZI2C_1_sda_aliases.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_BOOT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_BOOT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_INT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_PVT.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_SLAVE.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PINS.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PM.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PVT.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl\I2CS_scl.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl\I2CS_scl.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl\I2CS_scl_aliases.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_sda</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_sda\I2CS_sda.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_sda\I2CS_sda.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_sda\I2CS_sda_aliases.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Increment\Increment.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Increment\Increment.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Increment\Increment_aliases.h</v>
@@ -141,12 +146,13 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\TopDesign.cysch</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\LineCook2_IO_Interface.cydwr</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\actions.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\buttons.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\commands.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\i2c_constants.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Header Files\main.h</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\actions.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\buttons.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\commands.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Source Files\main.c</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4</v>
@@ -160,22 +166,21 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Defrost</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Enter</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Express</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_scl</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\EZI2C_1_sda</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Increment</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\MenuCook</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Options</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Popcorn</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Power</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Reheat</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\StartPause</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\TimeCook</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Timer</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Timer\Timer.c</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Timer\Timer.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\Timer\Timer_aliases.h</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_BOOT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_BOOT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_INT.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_PVT.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_I2C_SLAVE.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PINS.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PM.c</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS\I2CS_PVT.h</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\Generated_Source\PSoC4\I2CS_scl\I2CS_scl.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -200,13 +205,13 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\actions.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Beverage.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\buttons.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Clear.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\ClockAmPm.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Combination.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\commands.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\ConvBake.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
@@ -219,14 +224,15 @@
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Defrost.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Enter.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Express.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_BOOT.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_EZI2C.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_EZI2C_BOOT.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_EZI2C_INT.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_PM.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_scl.lst</v>
-<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\EZI2C_1_sda.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_BOOT.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_I2C.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_I2C_BOOT.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_I2C_INT.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_I2C_SLAVE.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_PM.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_scl.lst</v>
+<v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\I2CS_sda.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\Increment.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\main.lst</v>
 <v>LineCook2_IO_Interface\LineCook2_IO_Interface\CortexM0\ARM_GCC_473\Debug\Listing Files\MenuCook.lst</v>
@@ -282,15 +288,11 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\LineCook2_IO_Interface.cydsn\main.c" />
-<name v=".\LineCook2_IO_Interface.cydsn\main.h" />
-<name v=".\LineCook2_IO_Interface.cydsn\actions.c" />
-<name v=".\LineCook2_IO_Interface.cydsn\actions.h" />
 <name v=".\LineCook2_IO_Interface.cydsn\buttons.c" />
 <name v=".\LineCook2_IO_Interface.cydsn\buttons.h" />
-<name v=".\LineCook2_IO_Interface.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\LineCook2_IO_Interface.cydsn\LineCook2_IO_Interface.cydwr" />
-<name v=".\LineCook2_IO_Interface.cydsn\Generated_Source\PSoC4\cypins.h" />
+<name v=".\LineCook2_IO_Interface.cydsn\actions.c" />
+<name v=".\LineCook2_IO_Interface.cydsn\actions.h" />
+<name v=".\LineCook2_IO_Interface.cydsn\main.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
