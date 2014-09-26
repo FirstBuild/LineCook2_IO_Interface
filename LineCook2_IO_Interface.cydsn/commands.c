@@ -1,21 +1,20 @@
 #include <commands.h>
 #include <buttons.h>
 
-void executeCommand(command_t command, uint8 (*params)[4])
+void executeCommand(command_t command, uint8 (*params)[2])
 {
     switch (command)
     {
-       
         case CMD_SET_CLOCK:
-            setClock(*((uint16 *) params));
+            setClock((*params)[0], (*params)[1]);
             break;
         
         case CMD_SET_MODE:
             setMode((mode_t) (*params)[0]);
             break;
             
-        case CMD_SET_TIME:
-            setTime(*((uint32 *) params));
+        case CMD_SET_COOKING_TIME:
+            setCookingTime(*((uint16 *) params));
             break;
             
         case CMD_SET_CONVECTION_HEAT:
@@ -32,27 +31,33 @@ void executeCommand(command_t command, uint8 (*params)[4])
     }   
 }
 
-void setClock(uint32 secondsAfterMidnight)
+// Hours are in 24hour time, where 0 == 12am
+void setClock(uint8 hours, uint8 minutes)
 {
-    uint8 hours;
-    uint8 minutes;
-    uint8 pm = 0;
-    uint8 i;
+    uint8 i,
+          pm = 0;
  
-    if (secondsAfterMidnight > (60 * 60 * 24 - 1)) return;    
+    if (hours >= 24 || minutes >= 60) return;
     
-    hours = secondsAfterMidnight / (60 * 60);
-    if (hours >= 13)
+    if (hours == 0)
+    {
+        hours = 12;
+    } 
+    else if (hours == 12)
+    {
+        pm = 1;
+    } 
+    else if (hours >= 13)
     {
         hours -= 12;
         pm = 1;
     }
-    minutes = secondsAfterMidnight % (60 * 60);
-      
+
     pushButton(BTN_CLOCK_AMPM);
     pushButton(BTN_INCREMENT);
     
-    for (i = 0; i < hours; i++)
+    // Initial time is 1:00
+    for (i = 1; i < hours; i++)
     {
         pushButton(BTN_INCREMENT);
     }
@@ -89,15 +94,14 @@ void setMode(mode_t mode)
             break;
     }
     
-    // Always move encoder by one step to set initial values for heat/time
+    // Move encoder by one step, which initializes values for heat/time
     pushButton(BTN_INCREMENT);
 }
 
-// Assumes that screen is currently at the "Set Heat" view,
+// Assumes that screen is currently at the "Set Heat" stage
 void setConvectionHeat(uint16 heat)
 {
-    int i;
-    int diff;
+    int i, diff;
     button_t encoderBtn;
     
     if (heat == 350) {
@@ -117,12 +121,12 @@ void setConvectionHeat(uint16 heat)
     pushButton(BTN_ENTER);
 }
 
-// Minimum time is 15 seconds.
-// <= 22 will be rounded down to 15,
-// > 22 will be rounded up to 30.
-void setTime(uint16 seconds)
+// Assumes that screen is currently at the "Set Time" stage.
+// Minimum time is 15 seconds, and can only step in 15 second intervals.
+// Times will be rounded to the nearest 15 seconds.
+void setCookingTime(uint16 seconds)
 {
-    int steps, i;
+    int i, steps;
     steps = (seconds / 15) - 1;
     if (seconds % 15 > 7) steps += 1;
  
@@ -134,6 +138,7 @@ void setTime(uint16 seconds)
     pushButton(BTN_ENTER);
 }
 
+// Power level starts at 10, minimum of 1
 void setMicrowavePower(uint8 power)
 {
     uint8 i;

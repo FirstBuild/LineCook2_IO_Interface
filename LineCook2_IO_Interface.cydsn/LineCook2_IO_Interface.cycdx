@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="cy_constant_9" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_11" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_10" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Increment" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="StartPause" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clear" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Defrost" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Enter" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="MenuCook" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Decrement" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_18" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_17" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_16" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_13" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_12" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_15" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_14" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Combination" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Express" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="TimeCook" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ConvBake" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Reheat" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Increment" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Options" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="ClockAmPm" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Power" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Timer" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Beverage" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Popcorn" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="I2CS" BASE="0x0" SIZE="0x0" desc="Serial Communication Block" visible="true">
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -353,16 +342,9 @@
       <field name="BREAK_DETECT" from="11" to="11" access="RW" resetVal="" desc="Logical and of corresponding request and mask bits" />
     </register>
   </block>
-  <block name="Popcorn" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Beverage" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Options" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="MenuCook" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ClockAmPm" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clear" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Defrost" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Power" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="StartPause" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Enter" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Reheat" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="ConvBake" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="TimeCook" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Express" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Combination" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>

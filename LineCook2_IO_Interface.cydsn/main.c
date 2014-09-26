@@ -4,7 +4,7 @@
 #include <i2c_constants.h>
 
 command_t command;
-uint8 params[4];
+uint8 params[2];
 
 /* I2C slave read and write buffers */
 uint8 i2cReadBuffer [BUFFER_SIZE] = {PACKET_SOP, STS_CMD_FAIL, PACKET_EOP};
@@ -12,8 +12,8 @@ uint8 i2cWriteBuffer[BUFFER_SIZE];
 
 int main()
 {
-    uint8 status = STS_CMD_FAIL;
-    uint8 i;
+    uint8 i, 
+          status = STS_CMD_FAIL;
     
     CyGlobalIntEnable;
     
@@ -22,8 +22,8 @@ int main()
     I2CS_I2CSlaveInitWriteBuf(i2cWriteBuffer, BUFFER_SIZE);
     I2CS_Start();    
     
-    // Set time to 8:30 PM
-    setClock(73800);
+    // Set time to 8:32 PM
+    setClock(20u, 32u);
 
     for(;;)
     {
@@ -38,7 +38,7 @@ int main()
                     (i2cWriteBuffer[PACKET_EOP_POS] == PACKET_EOP))
                 {
                     // Copy param bytes into memory
-                    for (i = 0; i < 4; i++)
+                    for (i = 0; i < 2; i++)
                     {
                         params[i] = i2cWriteBuffer[PACKET_PRM_POS + i];
                     }
