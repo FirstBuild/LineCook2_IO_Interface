@@ -75,6 +75,7 @@
 <dep name=".\buttons.h" />
 <dep name=".\commands.c" />
 <dep name=".\commands.h" />
+<dep name=".\i2c_constants.h" />
 <dep name=".\main.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\Beverage.h" />
@@ -139,6 +140,7 @@
 <file name=".\buttons.h" />
 <file name=".\commands.c" />
 <file name=".\commands.h" />
+<file name=".\i2c_constants.h" />
 <file name=".\main.h" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\main.o">
 <dep name=".\Generated_Source\PSoC4\Beverage.h" />
@@ -206,7 +208,6 @@
 <dep name=".\main.c" />
 <dep name=".\main.h" />
 </file>
-<file name=".\i2c_constants.h" />
 <file name=".\main.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o">
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
@@ -2330,7 +2331,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130562270339472891" />
+<deps_time v="130562277237168203" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">

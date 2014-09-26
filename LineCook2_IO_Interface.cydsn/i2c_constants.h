@@ -1,3 +1,6 @@
+#ifndef I2C_HEADER
+#define I2C_HEADER
+    
 /* Buffer and packet size */
 #define BUFFER_SIZE     (7u)
 #define PACKET_SIZE     (BUFFER_SIZE)
@@ -16,3 +19,5 @@
 /* Command valid status */
 #define STS_CMD_DONE    (0x00u)
 #define STS_CMD_FAIL    (0xFFu)
+
+#endif

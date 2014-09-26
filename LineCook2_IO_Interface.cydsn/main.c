@@ -43,7 +43,7 @@ int main()
                         params[i] = i2cWriteBuffer[PACKET_PRM_POS + i];
                     }
                     command = (command_t) i2cWriteBuffer[PACKET_CMD_POS];
-                    executeCommand(command, &params);
+                    status = executeCommand(command, &params);
                 }
             }
 

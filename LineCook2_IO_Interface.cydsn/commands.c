@@ -1,7 +1,8 @@
 #include <commands.h>
 #include <buttons.h>
+#include <i2c_constants.h>
 
-void executeCommand(command_t command, uint8 (*params)[2])
+uint8 executeCommand(command_t command, uint8 (*params)[2])
 {
     switch (command)
     {
@@ -29,6 +30,8 @@ void executeCommand(command_t command, uint8 (*params)[2])
             pushButton((button_t) (*params)[0]);
             break;        
     }   
+    
+    return STS_CMD_DONE;
 }
 
 // Hours are in 24hour time, where 0 == 12am

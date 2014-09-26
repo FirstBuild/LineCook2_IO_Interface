@@ -19,7 +19,7 @@ typedef enum
     MODE_MICROWAVE
 } mode_t;
 
-void executeCommand(command_t command, uint8 (*params)[2]);
+uint8 executeCommand(command_t command, uint8 (*params)[2]);
 
 void setClock(uint8 hours, uint8 minutes);
 void setMode(mode_t mode);
