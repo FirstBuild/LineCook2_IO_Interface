@@ -13,13 +13,17 @@ void executeCommand(command_t command, uint8 (*params)[4])
         case CMD_SET_MODE:
             setMode((mode_t) (*params)[0]);
             break;
-        
-        case CMD_SET_HEAT:
-            setHeat(*((uint16 *) params));
-            break;
-        
+            
         case CMD_SET_TIME:
             setTime(*((uint32 *) params));
+            break;
+            
+        case CMD_SET_CONVECTION_HEAT:
+            setConvectionHeat(*((uint16 *) params));
+            break;
+        
+        case CMD_SET_MICROWAVE_POWER:
+            setMicrowavePower((*params)[0]);
             break;
         
         case CMD_PUSH_BUTTON:
@@ -84,17 +88,17 @@ void setMode(mode_t mode)
             pushButton(BTN_TIME_COOK);
             break;
     }
+    
+    // Always move encoder by one step to set initial values for heat/time
+    pushButton(BTN_INCREMENT);
 }
 
 // Assumes that screen is currently at the "Set Heat" view,
-void setHeat(uint16 heat)
+void setConvectionHeat(uint16 heat)
 {
     int i;
     int diff;
     button_t encoderBtn;
-    
-    // Move encoder by one step to set initial heat to 350 (default)
-    pushButton(BTN_INCREMENT);
     
     if (heat == 350) {
         return;
@@ -109,9 +113,37 @@ void setHeat(uint16 heat)
     for (i = 0; i < diff; i++) {
         pushButton(encoderBtn);
     }
+    
+    pushButton(BTN_ENTER);
 }
 
+// Minimum time is 15 seconds.
+// <= 22 will be rounded down to 15,
+// > 22 will be rounded up to 30.
 void setTime(uint16 seconds)
 {
+    int steps, i;
+    steps = (seconds / 15) - 1;
+    if (seconds % 15 > 7) steps += 1;
+ 
+    for (i = 0; i < steps; i++) 
+    {
+        pushButton(BTN_INCREMENT);
+    }
     
+    pushButton(BTN_ENTER);
+}
+
+void setMicrowavePower(uint8 power)
+{
+    uint8 i;
+    if (power > 10) return;
+    
+    pushButton(BTN_POWER);
+    
+    for (i = 10; i > power; i--)
+    {
+        pushButton(BTN_DECREMENT);
+    }
+    pushButton(BTN_ENTER);
 }
