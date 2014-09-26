@@ -23,11 +23,14 @@ int main()
     I2CS_Start();    
     
 	for (;;) {
-    // Set time to 8:32 PM
-    setClock(20u, 32u);
-	
-	CyDelay(1000);
-	}
+        // Set time to 2:45 AM
+        params[0] = 2u;
+        params[1] = 45u;
+        command = CMD_SET_CLOCK;
+        (void) executeCommand(command, &params);
+    	
+    	CyDelay(3000);
+    }
 
     for(;;)
     {
