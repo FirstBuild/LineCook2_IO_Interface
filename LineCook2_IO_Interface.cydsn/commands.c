@@ -11,7 +11,7 @@ void executeCommand(command_t command, uint8 (*params)[4])
             break;
         
         case CMD_SET_MODE:
-            setMode((*params)[0]);
+            setMode((mode_t) (*params)[0]);
             break;
         
         case CMD_SET_HEAT:
@@ -73,21 +73,21 @@ void setClock(uint32 secondsAfterMidnight)
     pushButton(BTN_ENTER);
 }
 
-void setMode(uint8 mode)
+void setMode(mode_t mode)
 {
     switch (mode)
     {
-        case 0:
+        case MODE_CONVECTION_BAKE:
             pushButton(BTN_CONVECTION_BAKE);
             break;
-        case 1:
+        case MODE_MICROWAVE:
             pushButton(BTN_TIME_COOK);
             break;
     }
 }
 
 // Assumes that screen is currently at the "Set Heat" view,
-void setHeat(unsigned short heat)
+void setHeat(uint16 heat)
 {
     int i;
     int diff;

@@ -12,6 +12,12 @@ typedef enum
     CMD_PUSH_BUTTON
 } command_t;
 
+typedef enum 
+{
+    MODE_CONVECTION_BAKE,
+    MODE_MICROWAVE
+} mode_t;
+
 uint16 uint16AtParamsIndex(uint8 i, uint8 (*params)[4]);
 
 void executeCommand(command_t command, uint8 (*params)[4]);
