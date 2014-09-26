@@ -21,16 +21,6 @@ int main()
     I2CS_I2CSlaveInitReadBuf (i2cReadBuffer,  BUFFER_SIZE);
     I2CS_I2CSlaveInitWriteBuf(i2cWriteBuffer, BUFFER_SIZE);
     I2CS_Start();    
-    
-	for (;;) {
-        // Set time to 2:45 AM
-        params[0] = 2u;
-        params[1] = 45u;
-        command = CMD_SET_CLOCK;
-        (void) executeCommand(command, &params);
-    	
-    	CyDelay(3000);
-    }
 
     for(;;)
     {
@@ -59,7 +49,7 @@ int main()
             (void) I2CS_I2CSlaveClearWriteStatus();
 
             /* Update read buffer */
-            i2cReadBuffer[PACKET_STS_POS] = status;
+            i2cReadBuffer[PACKET_STS_POS] = 73u;//status;
             status = STS_CMD_FAIL;
         }
 
