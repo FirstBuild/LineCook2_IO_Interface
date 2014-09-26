@@ -3,10 +3,10 @@
 #include <buttons.h>
 
 // params is an array with a length of 10 bytes. 
-action_t waitForInstruction(char (*params)[10])
+action_t waitForInstruction(uint8 (*params)[10])
 {
-    // Listen to UART
-    // Fill in params array with bytes
+    // Listen for SPI message, 
+    // fill params array with bytes
     // return action;
 }
 
@@ -14,23 +14,22 @@ action_t waitForInstruction(char (*params)[10])
 // ex:
 //    [0, 128] => 128
 //    [1, 0]   => 256
-unsigned short shortAtParamsIndex(int i, char (*params)[10])
+uint16 uint16AtParamsIndex(uint8 i, uint8 (*params)[10])
 {
-    unsigned short value;
-    value = ((unsigned short) (*params)[i]) << 8;
-    value = value | ((unsigned short) (*params)[i + 1]);
+    uint16 value;
+    value = ((uint16) (*params)[i]) << 8;
+    value = value | ((uint16) (*params)[i + 1]);
     return value;
 }
 
-void executeAction(action_t action, char (*params)[10])
+void executeAction(action_t action, uint8 (*params)[10])
 {
-    unsigned short shortValue;
-    
+    uint16 twoByteValue;
     switch (action)
     {
         case SET_CLOCK:
-            shortValue = shortAtParamsIndex(0, params);
-            setClock(shortValue);
+            twoByteValue = uint16AtParamsIndex(0, params);
+            setClock(twoByteValue);
             break;
         
         case SET_MODE:
@@ -38,13 +37,13 @@ void executeAction(action_t action, char (*params)[10])
             break;
         
         case SET_HEAT:
-            shortValue = shortAtParamsIndex(0, params);
-            setHeat(shortValue);
+            twoByteValue = uint16AtParamsIndex(0, params);
+            setHeat(twoByteValue);
             break;
         
         case SET_TIME:
-            shortValue = shortAtParamsIndex(0, params);
-            setTime(shortValue);
+            twoByteValue = uint16AtParamsIndex(0, params);
+            setTime(twoByteValue);
             break;
         
         case PUSH_BUTTON:
@@ -55,23 +54,60 @@ void executeAction(action_t action, char (*params)[10])
     }   
 }
 
-
-void setClock(unsigned short seconds)
+void setClock(uint32 secondsAfterMidnight)
 {
-    // Set hour
-    // Set minute
-    // Set AM / PM
+    uint8 hours;
+    uint8 minutes;
+    uint8 pm = 0;
+    uint8 i;
+ 
+    if (secondsAfterMidnight > (60 * 60 * 24 - 1)) return;    
+    
+    hours = secondsAfterMidnight / (60 * 60);
+    if (hours >= 13)
+    {
+        hours -= 12;
+        pm = 1;
+    }
+    minutes = secondsAfterMidnight % (60 * 60);
+      
+    pushButton(BTN_CLOCK_AMPM);
+    pushButton(BTN_INCREMENT);
+    
+    for (i = 0; i < hours; i++)
+    {
+        pushButton(BTN_INCREMENT);
+    }
+    
+    pushButton(BTN_ENTER);
+    pushButton(BTN_INCREMENT);
+    
+    for (i = 0; i < minutes; i++)
+    {
+        pushButton(BTN_INCREMENT);
+    }
+    
+    pushButton(BTN_ENTER);
+    pushButton(BTN_INCREMENT);
+    
+    if (pm == 1)
+    {
+        pushButton(BTN_INCREMENT);
+    }
+    
+    pushButton(BTN_ENTER);
+    pushButton(BTN_ENTER);
 }
 
-void setMode(char mode)
+void setMode(uint8 mode)
 {
     switch (mode)
     {
         case 0:
-            pushButton(BTN_COOK_CONVECTION);
+            pushButton(BTN_CONVECTION_BAKE);
             break;
         case 1:
-            pushButton(BTN_COOK_MICROWAVE);
+            pushButton(BTN_TIME_COOK);
             break;
     }
 }
@@ -84,15 +120,15 @@ void setHeat(unsigned short heat)
     button_t encoderBtn;
     
     // Move encoder by one step to set initial heat to 350 (default)
-    pushButton(BTN_ENCODER_UP);
+    pushButton(BTN_INCREMENT);
     
     if (heat == 350) {
         return;
     } else if (heat > 350) {
-        encoderBtn = BTN_ENCODER_UP;
+        encoderBtn = BTN_INCREMENT;
         diff = heat - 350;
     } else {
-        encoderBtn = BTN_ENCODER_DOWN;
+        encoderBtn = BTN_DECREMENT;
         diff = 350 - heat;
     }
    
@@ -101,7 +137,7 @@ void setHeat(unsigned short heat)
     }
 }
 
-void setTime(unsigned short seconds)
+void setTime(uint16 seconds)
 {
     
 }

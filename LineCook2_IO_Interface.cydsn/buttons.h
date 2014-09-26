@@ -5,18 +5,27 @@
     
 typedef enum 
 {
+    BTN_POPCORN,
+    BTN_BEVERAGE,
+    BTN_REHEAT,
+    BTN_EXPRESS,
+    BTN_COMBINATION,
+    BTN_CONVECTION_BAKE,
+    BTN_TIME_COOK,
+    BTN_POWER,
+    BTN_DEFROST,
+    BTN_ENTER,
     BTN_START,
-    BTN_STOP,
     BTN_CLEAR,
-    BTN_TIME,
-    BTN_CLOCK,
-    BTN_ENCODER_UP,
-    BTN_ENCODER_DOWN,
-    BTN_COOK_COMBO,
-    BTN_COOK_CONVECTION,
-    BTN_COOK_MICROWAVE
+    BTN_MENU_COOK,
+    BTN_OPTIONS,
+    BTN_CLOCK_AMPM,
+    BTN_TIMER,
+    BTN_INCREMENT,
+    BTN_DECREMENT
 } button_t;
 
 void pushButton(button_t button);
+void setButtonState(button_t button, uint8 value);
 
 #endif
