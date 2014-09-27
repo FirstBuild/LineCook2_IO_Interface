@@ -4,6 +4,11 @@
 
 uint8 executeCommand(command_t command, uint8 (*params)[2])
 {
+	uint16 uInt16Val;
+	
+	uInt16Val = (uint16) (*params)[1];
+	uInt16Val |= ((uint16) (*params)[0]) << 8;
+	
     switch (command)
     {
         case CMD_SET_CLOCK:
@@ -15,11 +20,11 @@ uint8 executeCommand(command_t command, uint8 (*params)[2])
             break;
             
         case CMD_SET_COOKING_TIME:
-            setCookingTime(*((uint16 *) params));
+            setCookingTime(uInt16Val);
             break;
             
         case CMD_SET_CONVECTION_HEAT:
-            setConvectionHeat(*((uint16 *) params));
+            setConvectionHeat(uInt16Val);
             break;
         
         case CMD_SET_MICROWAVE_POWER:
@@ -151,7 +156,7 @@ void setMicrowavePower(uint8 power)
     
     pushButton(BTN_POWER);
     
-    for (i = 10; i > power; i--)
+    for (i = 11; i > power; i--)
     {
         encoderDecrement();
     }

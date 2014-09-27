@@ -26,7 +26,8 @@ int main()
     {
         /* Write complete: parse command packet */
         if (0u != (I2CS_I2CSlaveStatus() & I2CS_I2C_SSTAT_WR_CMPLT))
-        {      
+        {
+			uint32_t dirty = I2CS_I2CSlaveGetWriteBufSize();
             /* Check packet length */
             if (PACKET_SIZE == I2CS_I2CSlaveGetWriteBufSize())
             {
